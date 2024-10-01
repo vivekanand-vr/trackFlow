@@ -26,11 +26,11 @@ function ExportImportData({ jobs, setJobs }) {
     <div className="flex flex-col items-center mt-4 space-y-4">
       <button
         onClick={exportData}
-        className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
+        className="bg-purple-700 text-white rounded hover:bg-gray-700 px-4 py-2 transition duration-300"
       >
         Export Data
       </button>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 pb-5">
         <input
           type="file"
           onChange={importData}

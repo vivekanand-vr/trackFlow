@@ -74,13 +74,13 @@ function App() {
       <HeroSection />
       <div className="mx-auto py-6 sm:px-6 lg:px-8">
         <WarningNote />
-        <div className="bg-white shadow-xl rounded-lg p-6">
+        <div className="bg-white shadow-xl rounded-lg">
           <button 
             onClick={() => {
               setShowForm(!showForm);
               if (!showForm) setSelectedJob(null);
             }} 
-            className="mb-4 p-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300"
+            className="mb-4 p-2 bg-purple-700 text-white rounded hover:bg-gray-700 transition duration-300"
           >
             {showForm ? 'Cancel' : 'Add Application'}
           </button>
