@@ -23,14 +23,14 @@ function ExportImportData({ jobs, setJobs }) {
   };
 
   return (
-    <div className="flex flex-col items-center mt-4 space-y-4">
+    <div className="flex justify-center items-center my-4 space-x-4 pb-4">
       <button
         onClick={exportData}
         className="bg-purple-700 text-white rounded hover:bg-gray-700 px-4 py-2 transition duration-300"
       >
         Export Data
       </button>
-      <div className="flex items-center space-x-2 pb-5">
+      <span className="flex items-center space-x-2">
         <input
           type="file"
           onChange={importData}
@@ -38,7 +38,7 @@ function ExportImportData({ jobs, setJobs }) {
           accept=".json"
         />
         <span className="text-gray-600">Choose a JSON file to import</span>
-      </div>
+      </span>
     </div>
   );
 }

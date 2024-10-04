@@ -76,7 +76,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               value={jobData.company}
               onChange={handleChange}
               required
-              className="p-2 border rounded w-1/8"
+              className="p-2 border border-stone-400 rounded w-1/8"
             />
             
             {/* Position */}
@@ -87,7 +87,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               value={jobData.position}
               onChange={handleChange}
               required
-              className="p-2 border rounded w-1/7"
+              className="p-2 border border-stone-400 rounded w-1/7"
             />
             
             {/* Salary */}
@@ -98,7 +98,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               value={jobData.salary}
               onChange={handleChange}
               required
-              className="p-2 border rounded w-28"
+              className="p-2 border border-stone-400 rounded w-28"
             />
             
             {/* Hiring Process */}
@@ -106,7 +106,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               name="hiringProcess"
               value={jobData.hiringProcess}
               onChange={handleChange}
-              className="p-2 border rounded w-1/8"
+              className="p-2 border border-stone-400 rounded w-1/8"
             >
               <option value="">Hiring Process</option>
               <option value="Aptitude and Coding">Aptitude and Coding</option>
@@ -122,7 +122,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               name="round1"
               value={jobData.round1}
               onChange={handleChange}
-              className="p-2 border rounded w-1/8"
+              className="p-2 border border-stone-400 rounded w-1/8"
             >
               <option value="">Round 1</option>
               <option value="Passed ✔️">Passed ✔️</option>
@@ -135,7 +135,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               name="round2"
               value={jobData.round2}
               onChange={handleChange}
-              className="p-2 border rounded w-1/8"
+              className="p-2 border border-stone-400 rounded w-1/8"
             >
               <option value="">Round 2</option>
               <option value="Passed ✔️">Passed ✔️</option>
@@ -145,7 +145,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
 
             {/* Key Skills */}
             <h2 className='flex justify-center items-center'>Key Skills</h2>
-            <div className='max-h-11 w-60 overflow-y-auto'>
+            <div className='max-h-11 w-60 overflow-y-auto border border-stone-400'>
                 <SkillsInput 
                   skills={jobData.keySkills}
                   onSkillsChange={handleSkillsChange}
@@ -157,7 +157,7 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               name="status"
               value={jobData.status}
               onChange={handleChange}
-              className="p-2 rounded w-1/8"
+              className="p-2 rounded w-1/8 border border-stone-400"
             >
               <option value="">Status</option>
               <option value="Applied">Applied</option>
@@ -173,11 +173,11 @@ const JobForm = ({ onSubmit, selectedJobData }) => {
               value={jobData.date}
               onChange={handleChange}
               required
-              className="p-2 border rounded w-1/8"
+              className="p-2 border border-stone-400 rounded w-1/8"
             />
             
             {/* Submit Button */}
-            <button type="submit" className="p-2 bg-blue-500 text-white rounded">
+            <button type="submit" className="p-2 px-3 bg-blue-500 text-white rounded">
               {selectedJobData ? 'Update' : 'Add'}
             </button>
           </form>
