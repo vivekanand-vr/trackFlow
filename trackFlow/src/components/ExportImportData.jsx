@@ -34,7 +34,7 @@ function ExportImportData({ jobs, setJobs }) {
         <input
           type="file"
           onChange={importData}
-          className="border border-gray-300 rounded px-2 py-2"
+          className="border border-gray-400 rounded px-2 py-2"
           accept=".json"
         />
         <span className="text-gray-600">Choose a JSON file to import</span>

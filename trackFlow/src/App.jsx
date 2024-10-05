@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sortJobsByCTC, sortJobsByDate } from './utils/Functions';
 import JobForm from './components/JobForm';
 import JobList from './components/JobList';
@@ -43,7 +43,7 @@ function App() {
     return savedJobs ? JSON.parse(savedJobs) : [];
   });
   const [selectedJob, setSelectedJob] = useState(null);
-  const [showForm, setShowForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [showSort, setShowSort] = useState(false);
 
   useEffect(() => {
@@ -53,12 +53,12 @@ function App() {
   const handleSort = (type) => {
     if (type === 'Date') {
       const sortedByDate = sortJobsByDate(jobs);
-      setJobs(sortedByDate);  // Set sorted jobs by date
+      setJobs(sortedByDate);
     } else if (type === 'CTC') {
       const sortedByCTC = sortJobsByCTC(jobs);
-      setJobs(sortedByCTC);  // Set sorted jobs by CTC
+      setJobs(sortedByCTC);
     }
-    setShowSort(false);  // Close the sort dropdown
+    setShowSort(false);
   };
 
   const addJob = (job) => {
@@ -72,42 +72,57 @@ function App() {
   const updateJob = (updatedJob) => {
     setJobs(prevJobs => prevJobs.map(job => (job.id === updatedJob.id ? updatedJob : job)));
     setSelectedJob(null);
-    setShowForm(false);
+    setShowModal(false);
   };
 
   const handleUpdateClick = (job) => {
     setSelectedJob(job);
-    setShowForm(true);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedJob(null);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <HeroSection />
-      <div className="mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto py-6 sm:px-6">
         <WarningNote />
-        <div className="bg-white shadow-xl rounded-lg">
-          <button onClick={() => {setShowForm(!showForm); if (!showForm) setSelectedJob(null);}} 
-                  className="mb-4 p-2 bg-purple-700 text-white rounded hover:bg-gray-700 transition duration-300">
-            {showForm ? 'Cancel' : 'Add Application'}
-          </button>
+        <div className="rounded-lg p-4">
+          <div className="flex justify-between mb-4">
+            <button 
+              onClick={() => setShowModal(true)} 
+              className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+            >
+              Add Application
+            </button>
 
-          <button onClick={() => setShowSort(!showSort)}
-                 className='ml-4 p-2 bg-purple-700 text-white rounded hover:bg-gray-700'>Sort By</button>
-          { // Sort By drop down menu
-            showSort && 
-            ( <ul className="font-semibold absolute left-52 ml-10 -mt-14 min-w-32 bg-violet-200 border-1 border-gray-400 rounded-md shadow-lg">
-                <li onClick={() => handleSort('Date')} className="px-3 py-2 border-b border-gray-300 hover:bg-gray-500 hover:text-white">
-                      Date
-                </li>
-                <li onClick={() => handleSort('CTC')} className="px-3 py-2 border-b border-gray-300 hover:bg-gray-500 hover:text-white cursor-pointer">
-                      CTC
-                </li>
-              </ul>)
-          }
-          { // Conditionally rendering JobForm
-            showForm && 
-            <JobForm onSubmit={selectedJob ? updateJob : addJob} selectedJobData={selectedJob} />
-          }
+            <div className="relative">
+              <button 
+                onClick={() => setShowSort(!showSort)}
+                className="px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+              >
+                Sort By
+              </button>
+              {showSort && (
+                <ul className="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+                  <li onClick={() => handleSort('Date')} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Date</li>
+                  <li onClick={() => handleSort('CTC')} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">CTC</li>
+                </ul>
+              )}
+            </div>
+          </div>
+
+          {showModal && (
+            <JobForm 
+              onSubmit={selectedJob ? updateJob : addJob} 
+              selectedJobData={selectedJob} 
+              onClose={handleCloseModal}
+            />
+          )}
+
           <JobList jobs={jobs} onDelete={deleteJob} onUpdate={handleUpdateClick} />
           <ExportImportData jobs={jobs} setJobs={setJobs} />
         </div>

@@ -25,8 +25,8 @@ function SkillsInput({ skills, onSkillsChange }) {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Type a skill & press Enter"
-        className="border border-gray-300 w-full rounded px-4 py-2 mb-2"
+        placeholder="Type a skill & press Enter (Top three only)"
+        className="border border-gray-300 w-full rounded px-4 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <div className="flex flex-wrap overflow-y-auto gap-2">
         {skills.map((skill) => (
