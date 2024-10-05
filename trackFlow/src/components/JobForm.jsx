@@ -106,6 +106,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
             <input
               type="number"
               name="salary"
+              step="any"
               placeholder="Salary/CTC"
               value={jobData.salary}
               onChange={handleChange}
@@ -176,6 +177,8 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               <option value="Applied">Applied</option>
               <option value="Paused">Paused</option>
               <option value="Interviewing">Interviewing</option>
+              <option value="Scheduled">Scheduled</option>
+              <option value="Pending">Pending</option>
               <option value="Offered">Offered</option>
               <option value="Rejected">Rejected</option>
             </select>

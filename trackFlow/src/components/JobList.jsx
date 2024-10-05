@@ -86,15 +86,19 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
               <td
                 className={`font-semibold border-t border-r border-neutral-300 p-2 text-left ${
                   job.status === "Applied"
-                    ? "bg-blue-200 text-blue-800"
+                    ? "bg-slate-200 text-stone-600"
                     : job.status === "Interviewing"
-                    ? "bg-yellow-100 text-yellow-700"
+                    ? "bg-lime-100 text-orange-700"
                     : job.status === "Offered"
-                    ? "bg-green-200 text-green-800"
+                    ? "bg-green-100 text-green-700"
                     : job.status === "Rejected"
-                    ? "bg-red-200 text-red-800"
+                    ? "bg-red-100 text-red-600"
                     : job.status === "Paused"
-                    ? "bg-cyan-200 text-cyan-800"
+                    ? "bg-zinc-200 text-gray-700"
+                    : job.status === "Scheduled"
+                    ? "bg-blue-100 text-blue-600"
+                    : job.status === "Pending"
+                    ? "bg-neutral-200 text-slate-700"
                     : ""
                 }`}
               >
