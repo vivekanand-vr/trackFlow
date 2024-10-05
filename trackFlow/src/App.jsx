@@ -87,10 +87,9 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <HeroSection />
-      <div className="mx-auto py-6 sm:px-6">
-        <WarningNote />
-        <div className="rounded-lg p-4">
+      <HeroSection />  
+        <div className="p-4 px-8">
+          <WarningNote />
           <div className="flex justify-between mb-4">
             <button 
               onClick={() => setShowModal(true)} 
@@ -126,7 +125,6 @@ function App() {
           <JobList jobs={jobs} onDelete={deleteJob} onUpdate={handleUpdateClick} />
           <ExportImportData jobs={jobs} setJobs={setJobs} />
         </div>
-      </div>
     </div>
   );
 }

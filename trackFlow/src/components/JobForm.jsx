@@ -88,6 +88,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               placeholder="Company"
               value={jobData.company}
               onChange={handleChange}
+              maxLength={40}
               required
               className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -98,7 +99,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               placeholder="Position"
               value={jobData.position}
               onChange={handleChange}
-              required
+              required maxLength={45}
               className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             
@@ -108,6 +109,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               placeholder="Salary/CTC"
               value={jobData.salary}
               onChange={handleChange}
+              min={1} max={50}
               required
               className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -122,9 +124,9 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               <option value="Aptitude and Coding">Aptitude and Coding</option>
               <option value="DSA Coding Round">DSA Coding Round</option>
               <option value="Coding Contest">Coding Contest</option>
-              <option value="Development Assessment">Development Assessment</option>
+              <option value="Development Task">Development Task</option>
               <option value="Hackathon">Hackathon</option>
-              <option value="Direct Interview">Direct Interview</option>
+              <option value="Interview">Interview</option>
             </select>
             
             <select
@@ -191,7 +193,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               type="text"
               name="location"
               placeholder="Location"
-              value={jobData.location}
+              value={jobData.location} maxLength={50}
               onChange={handleChange}
               className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -201,14 +203,14 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  placeholder="Recruiter Name"
+                  placeholder="Recruiter Name (Without Space)" maxLength={20}
                   value={recruiterName}
                   onChange={(e) => setRecruiterName(e.target.value)}
                   className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="text"
-                  placeholder="Recruiter Contact"
+                  placeholder="Recruiter Contact (Email/Phone)" maxLength={20}
                   value={recruiterContact}
                   onChange={(e) => setRecruiterContact(e.target.value)}
                   className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -223,7 +225,7 @@ const JobForm = ({ onSubmit, selectedJobData, onClose }) => {
                 value={jobData.notes}
                 onChange={handleChange}
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows="3"
+                rows="3" maxLength={300}
               ></textarea>
             </div>
           </div>

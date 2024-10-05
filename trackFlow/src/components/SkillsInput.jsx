@@ -21,7 +21,7 @@ function SkillsInput({ skills, onSkillsChange }) {
   return (
     <div className="">
       <input
-        type="text"
+        type="text" disabled={skills.length >= 3}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
