@@ -53,7 +53,6 @@ const LandingPage = (props) => {
           <ArrowRight className="ml-2" />
         </motion.button>
       </div>
-
       {/* Right side - Image */}
       <div className="w-2/5 flex items-center justify-center relative z-10">
         <img
