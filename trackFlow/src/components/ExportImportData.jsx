@@ -30,14 +30,14 @@ function ExportImportData({ jobs, setJobs }) {
       >
         Export Data
       </button>
-      <span className="flex items-center space-x-2">
+      <span className="space-x-2 text-white">
         <input
           type="file"
           onChange={importData}
           className="border border-gray-400 rounded px-2 py-2"
           accept=".json"
         />
-        <span className="text-gray-600">Choose a JSON file to import</span>
+        <span>Choose a JSON file to import</span>
       </span>
     </div>
   );
