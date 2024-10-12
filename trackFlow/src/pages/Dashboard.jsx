@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { sortJobsByCTC, sortJobsByDate } from '../utils/Functions';
+import Profile from '../components/Profile';
 import JobForm from '../components/JobForm';
 import JobList from '../components/JobList';
 import Charts from '../components/Charts';
@@ -7,7 +8,7 @@ import ExportImportData from '../components/ExportImportData';
 
 const WarningNote = () => {
   return (
-    <div className="bg-[#FDFFC2] border-l-4 border-yellow-500 p-4 mb-6 rounded-r-lg shadow-md">
+    <div className="bg-[#FDFFC2] w-fit border-l-4 border-yellow-500 p-4 mb-6 rounded-r-lg shadow-md">
       <div className="flex items-center">
         <span className="text-l mr-2" role="img" aria-label="warning">⚠️</span>
         <p className="font-semibold">Important:</p>
@@ -70,13 +71,16 @@ function Dashboard() {
   };
 
   return (
-    <div className="p-6 mx-6">
-      <WarningNote />
-      <div className='flex justify-center'>
-        <h1 className='w-fit text-4xl text-gray-600 font-semibold tracking-wider [background:linear-gradient(_to_bottom,transparent_40%,#fce041_)] px-2 py-2'>
+    <div className="p-6 mx-8">
+      <div className='flex justify-between'>
+        <WarningNote />
+        <Profile />
+      </div>
+      <span className='flex justify-center'>
+        <h1 className='w-fit text-4xl text-white font-semibold tracking-wider [background:linear-gradient(_to_bottom,transparent_40%,#fce041_)] px-2 py-2'>
           Dashboard
         </h1>
-      </div>
+      </span>
         <div className="flex space-x-4 mb-4">
             <button 
               onClick={() => setShowModal(true)} 

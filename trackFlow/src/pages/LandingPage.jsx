@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const LandingPage = (props) => {
+const LandingPage = ({onClick}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const LandingPage = (props) => {
 
   return (
     <div className="relative flex h-screen">
-      {/* Left side - Hero Section with Diagonal Separator */}
+      {/* Left side - Hero Section  */}
       <div className="relative w-3/5 bg-gradient-to-br from-blue-600 to-emerald-400 flex flex-col items-center justify-center text-white z-20 clip-diagonal">
         <motion.h1
           initial={{ opacity: 0, y: -70 }}
@@ -41,7 +41,7 @@ const LandingPage = (props) => {
         </motion.div>
 
         <motion.button
-          onClick={props.onLogin}
+          onClick={onClick}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}
