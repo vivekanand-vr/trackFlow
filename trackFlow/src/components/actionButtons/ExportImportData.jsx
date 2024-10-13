@@ -23,10 +23,10 @@ function ExportImportData({ jobs, setJobs }) {
   };
 
   return (
-    <div className="flex justify-center items-center my-4 space-x-4 pb-4">
+    <div className="flex justify-center items-center my-4 space-x-4 pb-4 font-poppins">
       <button
         onClick={exportData}
-        className="bg-[#006769] text-white rounded hover:bg-gray-700 px-4 py-2 transition duration-300"
+        className="px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white"
       >
         Export Data
       </button>

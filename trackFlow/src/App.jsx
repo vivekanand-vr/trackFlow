@@ -13,7 +13,7 @@ function App() {
   };
   
   if (user) {
-    return (<body className='bg-black'>
+    return (<body className='min-h-screen bg-gradient-to-r from-[#3E0000] to-[#7C0000]'>
               <Dashboard />
             </body>
           );

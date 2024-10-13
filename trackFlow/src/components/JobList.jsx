@@ -35,8 +35,8 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border border-black">
-        <thead>
-          <tr className="bg-[#0D9276] text-white text-left">
+        <thead className='font-poppins'>
+          <tr className="bg-black text-white text-left">
             <th className="p-2">COMPANY</th>
             <th className="p-2">POSITION</th>
             <th className="p-2">CTC</th>
@@ -54,7 +54,7 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
         </thead>
         <tbody>
           {jobs.map((job) => (
-            <tr key={job.id} className="bg-[#FEFDED] hover:bg-[#C4DAD2] last:border-b border-black">
+            <tr key={job.id} className="bg-white hover:bg-red-200 last:border-b border-black">
               <td className="p-2.5">{job.company}</td>
               <td className="p-2.5">{job.position}</td>
               <td className="p-2.5">{job.salary} LPA</td>
@@ -77,28 +77,22 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
               <td className="p-2.5">
                 <div className="flex flex-wrap gap-2 max-w-xs">
                   {job.keySkills.map((skill) => (
-                    <span key={skill} className="px-2 py-1 bg-indigo-100 rounded-xl text-sm whitespace-nowrap">
+                    <span key={skill} className="px-2 py-1 bg-rose-200 rounded-md text-sm whitespace-nowrap">
                       {skill}
                     </span>
                   ))}
                 </div>
               </td>
               <td
-                className={`font-semibold p-2.5 ${
-                  job.status === "Applied"
-                    ? "bg-slate-200 text-stone-600"
-                    : job.status === "Interviewing"
-                    ? "bg-yellow-100 text-yellow-600"
+                className={`p-2.5 ${
+                    job.status === "Interviewing"
+                    ? "bg-yellow-100"
                     : job.status === "Offered"
-                    ? "bg-green-100 text-green-700"
+                    ? "bg-green-100"
                     : job.status === "Rejected"
-                    ? "bg-red-100 text-red-600"
-                    : job.status === "Paused"
-                    ? "bg-zinc-200 text-gray-700"
+                    ? "bg-red-100"
                     : job.status === "Scheduled"
-                    ? "bg-blue-100 text-blue-600"
-                    : job.status === "Pending"
-                    ? "bg-neutral-200 text-slate-700"
+                    ? "bg-blue-100"
                     : ""
                 }`}
               >
