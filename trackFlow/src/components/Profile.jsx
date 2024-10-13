@@ -31,18 +31,18 @@ const ProfileDropdown = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-black hover:text-white focus:outline-none"
       >
         <User size={24} />
       </button>
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-52 bg-white rounded-md shadow-lg py-1 z-10">
-          <div className="px-4 py-2 text-sm text-gray-700 border-b">
+        <div className="absolute right-0 mt-2 w-52 bg-white rounded-md shadow-lg z-10">
+          <div className="px-4 py-2 text-sm border-b hover:bg-black hover:text-white">
             {user.email}
           </div>
           <button
             onClick={handleSignOut}
-            className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            className="flex items-center w-full px-4 py-2 text-sm hover:bg-black hover:text-white"
           >
             <LogOut size={18} className="mr-2" />
             Sign out

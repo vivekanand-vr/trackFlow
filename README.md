@@ -10,10 +10,11 @@
 * **Add Job Applications**: Users can input their job application details (e.g., position, company, status) and track their progress.
 * **Track Progress**: Keep track of the status of each application (e.g., applied, interviewed, rejected, etc.).
 * **Sort Applications**: Users can sort job applications by `date` or `C.T.C` values.
+* **Display Type**: Display applications based on job status, by defaule displays all.
 * **CRUD Operations**: Perform full **Create, Read, Update, and Delete** (CRUD) operations on job applications.
 * **Local Storage**: All data is automatically stored in the browser's local storage, making it persistent between sessions.
 * **Export & Import Data**: Export all application data to a `.json` file and import it back if needed, even after clearing the browser's cache.
-* **Beautiful UI**: Designed with Tailwind CSS for a modern and responsive interface with visually appealing colors and layouts.
+* **Beautiful UI**: Designed with Tailwind CSS for a modern and responsive interface with maroon theme.
 * **Tabular View**: All job applications are displayed in a table, providing a clear and structured view of the data.
 * **Analysis Charts**: Track application insights with visual charts such as Job Status, CTC Distribution, and Location-based stats.
 
@@ -67,8 +68,11 @@ TrackFlow
     ├── public
     ├── src
     │     ├── components
+    │     |     ├── actionButtons
+    |     |            ├── DisplayType.jsx
+    |     |            ├── ExportImportData.jsx
+    |     |            ├── SortJobs.jsx
     │     │     ├── Charts.jsx
-    │     │     ├── ExportImportData.jsx
     │     │     ├── JobForm.jsx
     │     │     ├── JobList.jsx
     │     │     ├── SkillsInput.jsx
