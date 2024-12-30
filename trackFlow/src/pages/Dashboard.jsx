@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from '../utils/Functions';
 import Button from '../components/design/Button';
 import Profile from '../components/Profile';
 import JobForm from '../components/JobForm';
@@ -8,6 +7,7 @@ import Charts from '../components/Charts';
 import SortJobs from "../components/actionButtons/SortJobs";
 import DisplayType from '../components/actionButtons/DisplayType';
 import ExportImportData from '../components/actionButtons/ExportImportData';
+import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from '../utils/Functions';
 
 const WarningNote = () => {
   return (
@@ -31,8 +31,8 @@ function Dashboard() {
     return savedJobs ? JSON.parse(savedJobs) : [];
   });
   const [selectedJob, setSelectedJob] = useState(null);
-  const [viewAnalytics, setViewAnalytics] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showStats, setShowStats] = useState(false);
   const [displayType, setDisplayType] = useState('All');
 
   useEffect(() => {
@@ -80,6 +80,8 @@ function Dashboard() {
     setSelectedJob(null);
   };
 
+  const closeStats = () => setShowStats(false);
+
   const filterJobs = (jobs) => {
     if (displayType === 'All') return jobs;
     return jobs.filter(job => job.status === displayType);
@@ -94,17 +96,14 @@ function Dashboard() {
 
       {/* All Buttons */}
       <div className="flex space-x-4 mb-4 font-poppins">
-        <Button onClick={() => setShowModal(true)}>
-          Add Application
-        </Button>
-
+        <Button onClick={() => setShowModal(true)}> Add Application </Button>
+        
         <SortJobs onSort={handleSort} />
-
+        
         <DisplayType displayType={displayType} setDisplayType={setDisplayType} />
-
-        <Button disabled={jobs.length === 0}
-                onClick={() => setViewAnalytics(!viewAnalytics)}>
-          { viewAnalytics ? 'Hide Stats' : 'Show Stats'}
+        
+        <Button disabled={jobs.length === 0} onClick={() => setShowStats(true)}>
+          Show Stats
         </Button>
       </div>
 
@@ -116,8 +115,11 @@ function Dashboard() {
         />
       )}
 
+      {showStats && (
+        <Charts data={jobs} onClose={closeStats} />
+      )}
+
       <JobList jobs={filterJobs(jobs)} onDelete={deleteJob} onUpdate={handleUpdateClick} />
-      { viewAnalytics && <Charts data={jobs} />}
       <ExportImportData jobs={jobs} setJobs={setJobs} />
     </div>
   );
