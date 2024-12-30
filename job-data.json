@@ -1,0 +1,325 @@
+[
+  {
+    "id": "1b989700-0b27-422b-9263-f1a392a26793",
+    "company": "Google",
+    "position": "SDE II",
+    "salary": "43",
+    "keySkills": [
+      "React JS",
+      "Java",
+      "Spring Boot"
+    ],
+    "status": "Interviewing",
+    "date": "2024-12-31",
+    "location": "Remote",
+    "notes": "Going well, need to improve database management skills.",
+    "recruiterContact": "Ramesh +1417847383",
+    "hiringStages": [
+      {
+        "type": "aptitude",
+        "status": "completed",
+        "date": "2024-12-16"
+      },
+      {
+        "type": "online_assessment",
+        "status": "scheduled",
+        "date": "2024-12-06"
+      },
+      {
+        "type": "managerial_interview",
+        "status": "completed",
+        "date": "2024-12-10"
+      },
+      {
+        "type": "assignment",
+        "status": "pending",
+        "date": "2024-11-26"
+      },
+      {
+        "type": "hr_round",
+        "status": "failed",
+        "date": "2024-12-11"
+      },
+      {
+        "type": "interview",
+        "status": "scheduled",
+        "date": "2024-12-31"
+      }
+    ]
+  },
+  {
+    "id": "2a83c870-1b27-45ab-b35c-f2b0837e2798",
+    "company": "Microsoft",
+    "position": "Software Engineer",
+    "salary": "38",
+    "keySkills": ["C#", ".NET", "Azure"],
+    "status": "Scheduled",
+    "date": "2024-12-15",
+    "location": "Seattle",
+    "notes": "Prepare for behavioral questions.",
+    "recruiterContact": "Anita +1417981234",
+    "hiringStages": [
+      {
+        "type": "aptitude",
+        "status": "scheduled",
+        "date": "2024-12-10"
+      },
+      {
+        "type": "online_assessment",
+        "status": "pending",
+        "date": "2024-12-13"
+      },
+      {
+        "type": "managerial_interview",
+        "status": "scheduled",
+        "date": "2024-12-20"
+      }
+    ]
+  },
+  {
+    "id": "34b09824-22c8-4d67-89b9-4123c98567cd",
+    "company": "Amazon",
+    "position": "Data Scientist",
+    "salary": "40",
+    "keySkills": ["Python", "Machine Learning", "AWS"],
+    "status": "Pending",
+    "date": "2024-12-20",
+    "location": "Remote",
+    "notes": "Focus on cloud deployment strategies.",
+    "recruiterContact": "Kevin +1237890987",
+    "hiringStages": [
+      {
+        "type": "aptitude",
+        "status": "completed",
+        "date": "2024-12-05"
+      },
+      {
+        "type": "assignment",
+        "status": "pending",
+        "date": "2024-12-12"
+      },
+      {
+        "type": "hr_round",
+        "status": "scheduled",
+        "date": "2024-12-18"
+      }
+    ]
+  },
+  {
+    "id": "6fa108a5-8f7d-4eb6-beb7-09f70eaa8763",
+    "company": "Apple",
+    "position": "iOS Developer",
+    "salary": "42",
+    "keySkills": ["Swift", "Objective-C", "UIKit"],
+    "status": "Interviewing",
+    "date": "2024-12-14",
+    "location": "Cupertino",
+    "notes": "Practice Swift concurrency concepts.",
+    "recruiterContact": "Maria +9874561234",
+    "hiringStages": [
+      {
+        "type": "online_assessment",
+        "status": "completed",
+        "date": "2024-12-08"
+      },
+      {
+        "type": "assignment",
+        "status": "completed",
+        "date": "2024-12-09"
+      },
+      {
+        "type": "interview",
+        "status": "pending",
+        "date": "2024-12-15"
+      }
+    ]
+  },
+  {
+    "id": "7be51243-d5a8-469f-9e59-3452f7890e5a",
+    "company": "Meta",
+    "position": "Backend Developer",
+    "salary": "41",
+    "keySkills": ["Node.js", "Express", "MongoDB"],
+    "status": "Offered",
+    "date": "2024-12-12",
+    "location": "Remote",
+    "notes": "Brush up on system design.",
+    "recruiterContact": "Emily +7891234567",
+    "hiringStages": [
+      {
+        "type": "managerial_interview",
+        "status": "completed",
+        "date": "2024-12-10"
+      },
+      {
+        "type": "hr_round",
+        "status": "completed",
+        "date": "2024-12-11"
+      },
+      {
+        "type": "interview",
+        "status": "completed",
+        "date": "2024-12-12"
+      }
+    ]
+  },
+  {
+    "id": "872f6940-bfe9-4a88-8b4d-2343fc8765b0",
+    "company": "Tesla",
+    "position": "AI Engineer",
+    "salary": "50",
+    "keySkills": ["TensorFlow", "Keras", "Python"],
+    "status": "Pending",
+    "date": "2024-12-20",
+    "location": "Austin",
+    "notes": "Focus on robotics applications.",
+    "recruiterContact": "John +6784561234",
+    "hiringStages": [
+      {
+        "type": "aptitude",
+        "status": "completed",
+        "date": "2024-12-01"
+      },
+      {
+        "type": "online_assessment",
+        "status": "completed",
+        "date": "2024-12-07"
+      },
+      {
+        "type": "assignment",
+        "status": "scheduled",
+        "date": "2024-12-15"
+      }
+    ]
+  },
+  {
+    "id": "f9b1437b-5674-4a31-bb8f-9c4576a98472",
+    "company": "Netflix",
+    "position": "Frontend Developer",
+    "salary": "39",
+    "keySkills": ["React", "TypeScript", "CSS"],
+    "status": "Scheduled",
+    "date": "2024-12-16",
+    "location": "Los Angeles",
+    "notes": "Practice performance optimization techniques.",
+    "recruiterContact": "Sophia +7654231890",
+    "hiringStages": [
+      {
+        "type": "assignment",
+        "status": "pending",
+        "date": "2024-12-13"
+      },
+      {
+        "type": "interview",
+        "status": "scheduled",
+        "date": "2024-12-16"
+      }
+    ]
+  },
+  {
+    "id": "61df9824-b8d7-41d6-bb69-7f345987ea41",
+    "company": "Adobe",
+    "position": "UX Designer",
+    "salary": "37",
+    "keySkills": ["Figma", "Adobe XD", "Prototyping"],
+    "status": "Interviewing",
+    "date": "2024-12-22",
+    "location": "San Jose",
+    "notes": "Focus on storytelling in designs.",
+    "recruiterContact": "Olivia +4318902345",
+    "hiringStages": [
+      {
+        "type": "managerial_interview",
+        "status": "pending",
+        "date": "2024-12-18"
+      },
+      {
+        "type": "hr_round",
+        "status": "scheduled",
+        "date": "2024-12-20"
+      }
+    ]
+  },
+  {
+    "id": "908f9c54-2e3b-4b1c-9c6f-98c34a5b7891",
+    "company": "Oracle",
+    "position": "Database Administrator",
+    "salary": "36",
+    "keySkills": ["SQL", "PL/SQL", "Oracle DB"],
+    "status": "Rejected",
+    "date": "2024-11-29",
+    "location": "Remote",
+    "notes": "Failed due to lack of expertise in Oracle DB management.",
+    "recruiterContact": "Noah +1234578098",
+    "hiringStages": [
+      {
+        "type": "aptitude",
+        "status": "completed",
+        "date": "2024-11-25"
+      },
+      {
+        "type": "online_assessment",
+        "status": "failed",
+        "date": "2024-11-29"
+      }
+    ]
+  },
+  {
+    "id": "872g5b4e-9df2-41f6-9a61-c7d5d34b7824",
+    "company": "Twitter",
+    "position": "DevOps Engineer",
+    "salary": "44",
+    "keySkills": ["Docker", "Kubernetes", "CI/CD"],
+    "status": "Offered",
+    "date": "2024-12-18",
+    "location": "Remote",
+    "notes": "Received great feedback on automation strategies.",
+    "recruiterContact": "Liam +4512349876",
+    "hiringStages": [
+      {
+        "type": "assignment",
+        "status": "completed",
+        "date": "2024-12-08"
+      },
+      {
+        "type": "interview",
+        "status": "completed",
+        "date": "2024-12-15"
+      },
+      {
+        "type": "hr_round",
+        "status": "completed",
+        "date": "2024-12-18"
+      }
+    ]
+  },
+  {
+    "id": "432g9a54-5e2b-4b12-9b64-c9d34a4c7898",
+    "company": "Snapchat",
+    "position": "AR Developer",
+    "salary": "45",
+    "keySkills": ["Unity", "ARKit", "C++"],
+    "status": "Interviewing",
+    "date": "2024-12-28",
+    "location": "Remote",
+    "notes": "Focus on innovative AR interactions.",
+    "recruiterContact": "Emma +6745831290",
+    "hiringStages": [
+      {
+        "type": "online_assessment",
+        "status": "completed",
+        "date": "2024-12-15"
+      },
+      {
+        "type": "assignment",
+        "status": "scheduled",
+        "date": "2024-12-20"
+      },
+      {
+        "type": "interview",
+        "status": "scheduled",
+        "date": "2024-12-28"
+      }
+    ]
+  }
+]
