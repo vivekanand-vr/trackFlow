@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from "../design/Button";
 
 function DisplayType({ displayType, setDisplayType }) {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -11,12 +12,9 @@ function DisplayType({ displayType, setDisplayType }) {
 
   return (
     <div className="relative">
-      <button 
-        onClick={() => setShowDropdown(!showDropdown)}
-        className="px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white"
-      >
+      <Button onClick={() => setShowDropdown(!showDropdown)}>
         Display Type: {displayType}
-      </button>
+      </Button>
       {showDropdown && (
         <ul className="absolute mt-2 w-40 bg-[#640d14] text-white border border-gray-300 rounded-md shadow-lg z-10">
           {displayTypeOptions.map((option) => (

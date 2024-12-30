@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from "../design/Button";
 
 function SortJobs({ onSort }) {
   const [showSort, setShowSort] = useState(false);
@@ -10,14 +11,11 @@ function SortJobs({ onSort }) {
 
   return (
     <div className="relative">
-      <button 
-        onClick={() => setShowSort(!showSort)}
-        className="px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white"
-      >
+      <Button onClick={() => setShowSort(!showSort)}>
         Sort By
-      </button>
+      </Button>
       {showSort && (
-        <ul className="absolute -right-20 mt-2 w-40 bg-[#640d14] text-white border border-gray-300 rounded-md shadow-lg z-10">
+        <ul className="absolute -right-28 mt-2 w-52 bg-[#640d14] text-white border border-gray-300 rounded-md shadow-lg z-10">
           <li onClick={() => handleSort('Most Recent')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">Most Recent</li>
           <li onClick={() => handleSort('Least Recent')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">Least Recent</li>
           <li onClick={() => handleSort('CTC Highest First')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">CTC - High to Low</li>

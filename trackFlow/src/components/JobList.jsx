@@ -33,7 +33,7 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
   );
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto rounded-md">
       <table className="min-w-full border border-black">
         <thead className='font-poppins'>
           <tr className="bg-black text-white text-left">
@@ -88,7 +88,7 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
                     job.status === "Interviewing"
                     ? "bg-yellow-100"
                     : job.status === "Offered"
-                    ? "bg-green-100"
+                    ? "bg-green-200"
                     : job.status === "Rejected"
                     ? "bg-red-100"
                     : job.status === "Scheduled"

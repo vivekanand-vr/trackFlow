@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from '../utils/Functions';
+import Button from '../components/design/Button';
 import Profile from '../components/Profile';
 import JobForm from '../components/JobForm';
 import JobList from '../components/JobList';
@@ -93,20 +94,18 @@ function Dashboard() {
 
       {/* All Buttons */}
       <div className="flex space-x-4 mb-4 font-poppins">
-        <button onClick={() => setShowModal(true)} 
-                className="px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white">
+        <Button onClick={() => setShowModal(true)}>
           Add Application
-        </button>
+        </Button>
 
         <SortJobs onSort={handleSort} />
 
         <DisplayType displayType={displayType} setDisplayType={setDisplayType} />
 
-        <button disabled={jobs.length === 0}
-                onClick={() => setViewAnalytics(!viewAnalytics)}
-                className='px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white'>
+        <Button disabled={jobs.length === 0}
+                onClick={() => setViewAnalytics(!viewAnalytics)}>
           { viewAnalytics ? 'Hide Stats' : 'Show Stats'}
-        </button>
+        </Button>
       </div>
 
       {showModal && (
