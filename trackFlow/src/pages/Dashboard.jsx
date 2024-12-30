@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { sortJobsByCTC, sortJobsByDate } from '../utils/Functions';
+import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from '../utils/Functions';
 import Profile from '../components/Profile';
 import JobForm from '../components/JobForm';
 import JobList from '../components/JobList';
@@ -39,10 +39,19 @@ function Dashboard() {
   }, [jobs]);
 
   const handleSort = (type) => {
-    if (type === 'Date') {
-      setJobs(sortJobsByDate([...jobs]));
-    } else if (type === 'CTC') {
-      setJobs(sortJobsByCTC([...jobs]));
+    switch (type) {
+      case 'Most Recent':
+        setJobs(sortJobsByDateDes([...jobs]));
+        break;
+      case 'Least Recent':
+        setJobs(sortJobsByDateAsc([...jobs]));
+        break;
+      case 'CTC Highest First':
+        setJobs(sortJobsByCtcDes([...jobs]));
+        break;
+      default:
+        setJobs(sortJobsByCtcAsc([...jobs]));
+        break;
     }
   };
 
@@ -93,7 +102,8 @@ function Dashboard() {
 
         <DisplayType displayType={displayType} setDisplayType={setDisplayType} />
 
-        <button onClick={() => setViewAnalytics(!viewAnalytics)}
+        <button disabled={jobs.length === 0}
+                onClick={() => setViewAnalytics(!viewAnalytics)}
                 className='px-4 py-2 font-semibold rounded bg-white border-2 border-black hover:bg-[#640d14] hover:text-white hover:border-white'>
           { viewAnalytics ? 'Hide Stats' : 'Show Stats'}
         </button>

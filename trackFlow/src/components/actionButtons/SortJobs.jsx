@@ -18,8 +18,10 @@ function SortJobs({ onSort }) {
       </button>
       {showSort && (
         <ul className="absolute -right-20 mt-2 w-40 bg-[#640d14] text-white border border-gray-300 rounded-md shadow-lg z-10">
-          <li onClick={() => handleSort('Date')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">Date</li>
-          <li onClick={() => handleSort('CTC')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">CTC</li>
+          <li onClick={() => handleSort('Most Recent')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">Most Recent</li>
+          <li onClick={() => handleSort('Least Recent')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">Least Recent</li>
+          <li onClick={() => handleSort('CTC Highest First')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">CTC - High to Low</li>
+          <li onClick={() => handleSort('CTC Lowest First')} className="px-4 py-2 hover:bg-gray-200 hover:text-black cursor-pointer">CTC - Low to High</li>
         </ul>
       )}
     </div>
