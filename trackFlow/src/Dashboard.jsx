@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import Button from '../components/design/Button';
-import Profile from '../components/Profile';
-import JobForm from '../components/JobForm';
-import JobList from '../components/JobList';
-import Charts from '../components/Charts';
-import SortJobs from "../components/actionButtons/SortJobs";
-import DisplayType from '../components/actionButtons/DisplayType';
-import ExportImportData from '../components/actionButtons/ExportImportData';
-import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from '../utils/Functions';
+import Button from './components/design/Button';
+import JobForm from './components/JobForm';
+import JobList from './components/JobList';
+import Charts from './components/Charts';
+import SortJobs from "./components/actionButtons/SortJobs";
+import DisplayType from './components/actionButtons/DisplayType';
+import ExportImportData from './components/actionButtons/ExportImportData';
+import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from './utils/Functions';
 
-const WarningNote = () => {
+const HeroSection = () => {
   return (
-    <div className="bg-[#FDFFC2] w-fit border-l-4 border-yellow-500 p-4 mb-6 rounded-r-lg shadow-md">
-      <div className="flex items-center font-poppins">
-        <span className="text-l mr-2" role="img" aria-label="warning">⚠️</span>
-        <p className="font-semibold">Important:</p>
-      </div>
-      <p className="mt-2 font-poppins">
-        Please export your data before clearing your browser cache. 
-        Failure to do so may result in loss of your job Dashboard Application records.
+    <div className='text-white'>
+      <h1 className="text-6xl font-bold mb-2 text-center">
+          Track Flow
+      </h1>
+      <p className="text-2xl mb-6 text-center">
+          Streamline your job search journey
       </p>
+    </div>
+  )
+}
+
+const Popup = ({ onClose }) => {
+  return (
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
+      <div className="bg-white rounded-lg p-6 shadow-lg max-w-lg text-center">
+        <h2 className="text-lg font-bold mb-4">Important!</h2>
+        <p className="text-gray-800">
+          Please export your data before clearing your browser cache.
+          Failure to do so may result in the loss of your records.
+        </p>
+        <button
+          onClick={onClose}
+          className="mt-4 px-4 py-2 bg-maroon-600 text-white font-semibold rounded hover:bg-gray-800"
+        >
+          Got it
+        </button>
+      </div>
     </div>
   );
 };
@@ -30,10 +47,16 @@ function Dashboard() {
     const savedJobs = localStorage.getItem('jobs');
     return savedJobs ? JSON.parse(savedJobs) : [];
   });
+  const [popup, setPopup] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [displayType, setDisplayType] = useState('All');
+
+  useEffect(() => {
+    // Show the popup every time the page is loaded
+    setPopup(true);
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('jobs', JSON.stringify(jobs));
@@ -89,11 +112,15 @@ function Dashboard() {
 
   return (
     <div className="p-6 mx-8">
-      <div className='flex justify-between'>
-        <WarningNote />
-        <Profile />
-      </div>
-
+      {popup && (
+        <Popup
+          message=""
+          onClose={() => setPopup(false)}
+        />
+      )}
+      
+      <HeroSection />
+     
       {/* All Buttons */}
       <div className="flex space-x-4 mb-4 font-poppins">
         <Button onClick={() => setShowModal(true)}> Add Application </Button>
