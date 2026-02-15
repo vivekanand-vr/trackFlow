@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { HiringStagesCell } from './HiringStages';
-import { IoCloseCircleOutline } from "react-icons/io5";
 import { FaRegStickyNote } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line, RiAddLargeLine } from "react-icons/ri";
+import { LuFolderSearch } from "react-icons/lu";
+import NotesModal from './modals/NotesModal';
+import Button from './design/Button';
 
 const JobList = ({ jobs, onDelete, onUpdate }) => {
   const [showNotesModal, setShowNotesModal] = useState(false);
@@ -14,24 +16,23 @@ const JobList = ({ jobs, onDelete, onUpdate }) => {
     setShowNotesModal(true);
   };
 
-  const NotesModal = ({ notes, onClose }) => (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50" id="notes-modal">
-      <div className="relative p-5 border w-96 shadow-lg rounded-md bg-white">
-        {/* Close Icon at top right */}
-        <button className="absolute top-3 right-3 text-2xl text-gray-500 hover:text-gray-700" onClick={onClose}>
-          <IoCloseCircleOutline />
-        </button>
-        
-        {/* Modal Content */}
-        <div className="mt-3 text-center">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Note</h3>
-          <div className="mt-2 px-7 py-3">
-            <p className="text-sm text-gray-700">{notes}</p>
-          </div>
+  // Empty State UI when there are no job applications 
+  if(jobs.length === 0 ){
+    return (
+      <div className='flex flex-col items-center justify-center min-h-[600px] gap-6 bg-white/95 p-10 rounded-md shadow-md'>
+        <div className='flex flex-col items-center gap-4'>
+          <LuFolderSearch size={40} className='text-black'/>
+          <h2 className='text-center text-2xl font-poppins'>
+            No job applications found. Start adding you applications now!
+          </h2>
         </div>
+        
+        <Button onClick={() => onUpdate(null)} >
+          Add Application 
+        </Button>
       </div>
-    </div>
-  );
+    )
+  }
 
   return (
     <div className="overflow-x-auto rounded-md">

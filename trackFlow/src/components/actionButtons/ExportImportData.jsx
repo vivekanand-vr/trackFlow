@@ -25,9 +25,13 @@ function ExportImportData({ jobs, setJobs }) {
 
   return (
     <div className="flex justify-center items-center my-4 space-x-4 pb-4 font-poppins">
-      <Button onClick={exportData}>
-        Export Data
-      </Button>
+      { jobs.length > 0 && (
+          <Button onClick={exportData}>
+            Export Data
+          </Button>
+        )
+      }
+      
       <span className="space-x-2 text-white">
         <input
           type="file"

@@ -96,9 +96,6 @@ const HiringStageForm = ({ stages, onChange, onAddStage, onRemoveStage }) => {
     <div className="space-y-4 mb-4">
       {stages.map((stage, index) => (
         <div key={index} className="flex items-start space-x-4 p-4 border rounded-lg bg-slate-200">
-          <div className="mt-2">
-            <MdDragIndicator className="w-6 h-6 text-gray-600" />
-          </div>
           
           <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>

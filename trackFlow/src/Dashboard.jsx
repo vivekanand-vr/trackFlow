@@ -6,6 +6,7 @@ import Charts from './components/Charts';
 import SortJobs from "./components/actionButtons/SortJobs";
 import DisplayType from './components/actionButtons/DisplayType';
 import ExportImportData from './components/actionButtons/ExportImportData';
+import NotificationModal from './components/modals/NotificationModal';
 import { sortJobsByCtcAsc, sortJobsByCtcDes, sortJobsByDateAsc, sortJobsByDateDes } from './utils/Functions';
 
 const HeroSection = () => {
@@ -21,25 +22,7 @@ const HeroSection = () => {
   )
 }
 
-const Popup = ({ onClose }) => {
-  return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
-      <div className="bg-white rounded-lg p-6 shadow-lg max-w-lg text-center">
-        <h2 className="text-lg font-bold mb-4">Important!</h2>
-        <p className="text-gray-800">
-          Please export your data before clearing your browser cache.
-          Failure to do so may result in the loss of your records.
-        </p>
-        <button
-          onClick={onClose}
-          className="mt-4 px-4 py-2 bg-maroon-600 text-white font-semibold rounded hover:bg-gray-800"
-        >
-          Got it
-        </button>
-      </div>
-    </div>
-  );
-};
+
 
 function Dashboard() {
   
@@ -113,7 +96,7 @@ function Dashboard() {
   return (
     <div className="p-6 mx-8">
       {popup && (
-        <Popup
+        <NotificationModal
           message=""
           onClose={() => setPopup(false)}
         />
@@ -124,11 +107,8 @@ function Dashboard() {
       {/* All Buttons */}
       <div className="flex space-x-4 mb-4 font-poppins">
         <Button onClick={() => setShowModal(true)}> Add Application </Button>
-        
         <SortJobs onSort={handleSort} />
-        
         <DisplayType displayType={displayType} setDisplayType={setDisplayType} />
-        
         <Button disabled={jobs.length === 0} onClick={() => setShowStats(true)}>
           Show Stats
         </Button>
